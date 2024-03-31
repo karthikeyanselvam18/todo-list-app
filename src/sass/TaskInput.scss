@@ -1,0 +1,27 @@
+@import "App";
+
+$primary-color: $red-pantone;
+$text-color: $antiflash-white;
+
+.input-container {
+  border-radius: 0.2rem;
+  overflow: hidden;
+
+  input,
+  button {
+    padding: 10px 15px;
+    border: none;
+  }
+
+  button {
+    background-color: $primary-color;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: $text-color;
+    font-weight: bold;
+
+    &:hover {
+      background-color: darken($primary-color, 20%);
+    }
+  }
+}

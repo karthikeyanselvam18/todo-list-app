@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../sass/Task.scss";
 export interface ITaskProps {
   id: number;
   taskName: string;

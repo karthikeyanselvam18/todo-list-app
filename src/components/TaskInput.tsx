@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../sass/TaskInput.scss";
 export interface ITaskInputProps {
   handleTaskInsertion: any;
 }
@@ -10,6 +9,7 @@ export function TaskInput(props: ITaskInputProps) {
 
   function handleAddButtonClick() {
     if (taskInput) handleTaskInsertion(taskInput.trim());
+    setTaskInput("");
   }
   return (
     <>
@@ -20,6 +20,7 @@ export function TaskInput(props: ITaskInputProps) {
           id=""
           value={taskInput}
           onChange={(e) => setTaskInput(e.target.value)}
+          onKeyDown={(e) => (e.key == "Enter" ? handleAddButtonClick() : null)}
         />
         <button onClick={handleAddButtonClick}>Add</button>
       </div>

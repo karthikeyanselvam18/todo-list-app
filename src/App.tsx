@@ -1,42 +1,58 @@
-import "./sass/App.scss";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import Header from "./components/Header";
 import { Task } from "./components/Task";
-import { useEffect, useState } from "react";
 import { TaskInput } from "./components/TaskInput";
+import "./sass/App.scss";
 
-function App() {
+interface TaskItem {
+  taskName: string;
+  isDone: boolean;
+}
+
+function App(): JSX.Element {
   const todoListJson = localStorage.getItem("todo-list");
-  const storedTask = todoListJson ? JSON.parse(todoListJson) : [];
-  const [tasks, setTasks] = useState(storedTask);
+  const storedTask: TaskItem[] = JSON.parse(todoListJson || "[]");
+  const [tasks, setTasks] = useState<TaskItem[]>(storedTask);
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   useEffect(() => {
     localStorage.setItem("todo-list", JSON.stringify(tasks));
   }, [tasks]);
 
-  function handleTaskInsertion(task: string) {
-    setTasks((prev: any) => [...prev, { taskName: task, isDone: false }]);
+  function handleTaskInsertion(task: string): void {
+    setTasks((prevTasks) => [...prevTasks, { taskName: task, isDone: false }]);
   }
 
-  function handleIsDoneClick(id: number) {
-    const updatedTasks = [...tasks];
-    updatedTasks[id].isDone = !updatedTasks[id].isDone;
-    setTasks(updatedTasks);
-  }
-
-  function handleDeleteButton(id: number) {
-    const updatedTasks = tasks.filter(
-      (task: any, index: number) => index !== id
+  function handleIsDoneClick(id: number): void {
+    setTasks((prevTasks) =>
+      prevTasks.map((task, index) =>
+        index === id ? { ...task, isDone: !task.isDone } : task
+      )
     );
-    setTasks(updatedTasks);
   }
+
+  function handleDeleteButton(id: number): void {
+    setTasks((prevTasks) => prevTasks.filter((_, index) => index !== id));
+  }
+
+  function handleSearchTermChange(event: ChangeEvent<HTMLInputElement>): void {
+    setSearchTerm(event.target.value);
+  }
+
+  const filteredTasks = tasks.filter((task) =>
+    task.taskName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="app">
-      <Header />
+      <Header
+        searchTerm={searchTerm}
+        handleSearchTermChange={handleSearchTermChange}
+      />
       <div className="container">
         <TaskInput handleTaskInsertion={handleTaskInsertion} />
         <div className="tasks-container">
-          {tasks.map((task: any, index: number) => (
+          {filteredTasks.map((task, index) => (
             <Task
               key={index}
               id={index}

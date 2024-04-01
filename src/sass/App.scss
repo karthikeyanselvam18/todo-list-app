@@ -35,7 +35,11 @@ body {
     width: 100%;
     padding: 20px;
     color: $fire-engine-red;
-
+    background-color: darken($space-cadet, 6);
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 100;
     // Search bar styles
     .search-bar {
       display: flex;
@@ -65,7 +69,7 @@ body {
         }
 
         @media (min-width: 700px) {
-          width: 70%;
+          width: 100%;
           padding: 5px 10px;
         }
       }
@@ -94,7 +98,11 @@ body {
         padding: 10px 15px;
         border: none;
       }
-
+      input {
+        @media (min-width: 700px) {
+          width: 300px;
+        }
+      }
       input:focus-visible {
         border-radius: 0.2rem;
         outline: {
@@ -140,7 +148,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgba($antiflash-white, 0.2);
+        background-color: rgba($antiflash-white, 0.1);
         border-radius: 0.2rem;
         padding: 10px 15px;
 
@@ -198,6 +206,24 @@ body {
             font-size: 1.4rem;
           }
         }
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: $antiflash-white;
+    background-color: $space-cadet;
+    p {
+      a {
+        color: $antiflash-white;
       }
     }
   }

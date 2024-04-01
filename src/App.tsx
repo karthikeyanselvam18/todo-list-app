@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { Task } from "./components/Task";
 import { TaskInput } from "./components/TaskInput";
 import "./sass/App.scss";
+import { Footer } from "./components/Footer";
 
 interface TaskItem {
   taskName: string;
@@ -64,6 +65,7 @@ function App(): JSX.Element {
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

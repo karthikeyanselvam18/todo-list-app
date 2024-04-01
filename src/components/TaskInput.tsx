@@ -18,11 +18,14 @@ export function TaskInput(props: ITaskInputProps) {
           type="text"
           name=""
           id=""
+          placeholder="Enter task"
           value={taskInput}
           onChange={(e) => setTaskInput(e.target.value)}
           onKeyDown={(e) => (e.key == "Enter" ? handleAddButtonClick() : null)}
         />
-        <button onClick={handleAddButtonClick}>Add</button>
+        <button onClick={handleAddButtonClick}>
+          <i className="fa-solid fa-plus"></i>
+        </button>
       </div>
     </>
   );

@@ -11,14 +11,16 @@ export function Task(props: ITaskProps) {
   const { id, taskName, isDone, handleIsDoneClick, handleDeleteButton } = props;
 
   const strikeStyle = isDone ? { width: "100%" } : { width: "0px" };
-  const radioStyle = isDone ? { left: "26px" } : { left: "2px" };
+  const radioStyle = isDone ? { left: "21px" } : { left: "2px" };
   return (
     <>
       <div className="task">
-        <span className="task-name">
-          {taskName}
-          <span className="strike-line" style={strikeStyle}></span>
-        </span>
+        <div className="task-name-container">
+          <span className="task-name">
+            {taskName}
+            <span className="strike-line" style={strikeStyle}></span>
+          </span>
+        </div>
         <div className="button-group">
           <div
             className="radio-container"
@@ -27,7 +29,7 @@ export function Task(props: ITaskProps) {
             <div className="radio-button" style={radioStyle}></div>
           </div>
           <button className="delete" onClick={() => handleDeleteButton(id)}>
-            Delete
+            <i className="fa-solid fa-trash"></i>
           </button>
         </div>
       </div>

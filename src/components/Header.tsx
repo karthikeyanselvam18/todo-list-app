@@ -1,12 +1,27 @@
+import React, { useRef } from "react";
+
 export interface IHeaderProps {
   searchTerm: string;
-  handleSearchTermChange: any;
+  handleSearchTermChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function Header({
+const Header: React.FC<IHeaderProps> = ({
   searchTerm,
   handleSearchTermChange,
-}: IHeaderProps) {
+}) => {
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const isChecked = event.target.checked;
+    if (searchInputRef.current) {
+      if (isChecked) {
+        searchInputRef.current.focus(); 
+      } else {
+        searchInputRef.current.blur();
+      }
+    }
+  };
+
   return (
     <header>
       <div className="logo">
@@ -16,8 +31,13 @@ export default function Header({
         <label htmlFor="check">
           <i className="fa-solid fa-magnifying-glass"></i>
         </label>
-        <input type="checkbox" name="" id="check" />
         <input
+          type="checkbox"
+          id="check"
+          onChange={handleCheckboxChange} 
+        />
+        <input
+          ref={searchInputRef}
           type="text"
           id="search-input"
           value={searchTerm}
@@ -27,4 +47,6 @@ export default function Header({
       </div>
     </header>
   );
-}
+};
+
+export default Header;

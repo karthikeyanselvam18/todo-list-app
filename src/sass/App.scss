@@ -142,56 +142,60 @@ body {
         justify-content: space-between;
         background-color: rgba($antiflash-white, 0.2);
         border-radius: 0.2rem;
-        padding: 10px;
+        padding: 10px 15px;
 
         // Task name styles
-        .task-name {
-          position: relative;
-          padding-inline: 1px;
-
-          .strike-line {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            height: 2px;
-            width: 0;
-            background-color: $red-pantone;
-            transform-origin: left;
-            transition: width 0.25s;
+        .task-name-container {
+          width: 70%;
+          .task-name {
+            position: relative;
+            padding-inline: 1px;
+            word-wrap: break-word;
+            .strike-line {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              height: 2px;
+              width: 0;
+              background-color: $red-pantone;
+              transform-origin: left;
+              transition: width 0.25s;
+            }
           }
         }
 
         // Button group styles
         .button-group {
           display: flex;
-          gap: 10px;
+          gap: 15px;
 
           // Radio container styles
           .radio-container {
-            height: 30px;
-            width: 55px;
+            height: 25px;
+            width: 45px;
             border: 1px solid $antiflash-white;
             border-radius: 100px;
             position: relative;
 
             // Radio button styles
             .radio-button {
-              height: 25px;
-              width: 25px;
-              background-color: aliceblue;
+              height: 20px;
+              width: 20px;
+              background-color: $antiflash-white;
               border-radius: 50%;
               position: absolute;
-              top: 50%;
+              top: 1.5px;
               left: 2px;
-              transform: translateY(-50%);
               transition: left 0.25s;
             }
           }
 
           button {
-            padding: 5px 10px;
+            background-color: transparent;
+            color: $antiflash-white;
             border: none;
             border-radius: 0.2rem;
+            font-size: 1.4rem;
           }
         }
       }

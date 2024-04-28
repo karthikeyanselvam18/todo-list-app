@@ -53,6 +53,12 @@ function App(): JSX.Element {
       <div className="container">
         <TaskInput handleTaskInsertion={handleTaskInsertion} />
         <div className="tasks-container">
+          {filteredTasks.length <= 0 && (
+            <div className="empty">
+              <img src="/empty.png" alt="" />
+              <p>Nothing to see here...</p>
+            </div>
+          )}
           {filteredTasks.map((task, index) => (
             <Task
               key={index}
@@ -65,7 +71,7 @@ function App(): JSX.Element {
           ))}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

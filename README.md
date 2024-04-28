@@ -1,12 +1,4 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Todo List App" />
-
-&#xa0;
-
-  <!-- <a href="https://todolistapp.netlify.app">Demo</a> -->
-</div>
-
-<h1 align="center">Todo List App</h1>
+<h1 align="center" id="top">Todo List App</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/karthikeyanselvam18/todo-list-app?color=56BEB8">
@@ -41,7 +33,9 @@
   <a href="https://github.com/karthikeyanselvam18" target="_blank">Author</a>
 </p>
 
-<br>
+## 🌐 Live ##
+
+Click here to see <a href="https://ks18-todo.netlify.app/">live page</a> 
 
 ## :dart: About
 

@@ -46,15 +46,14 @@
 
 ## :dart: About
 
-Our todo list app, built with React, TypeScript, and Tailwind CSS, offers a streamlined way to manage tasks effectively. With intuitive features like adding, deleting, and marking tasks as finished, alongside a search option for quick access, staying organized has never been easier. Enjoy a responsive design, customizable options, and accessibility features for a seamless user experience.
+Our todo list app, built with React, TypeScript, and Sass, offers a streamlined way to manage tasks effectively. With intuitive features like adding, deleting, and marking tasks as finished, alongside a search option for quick access, staying organized has never been easier. Enjoy a responsive design, customizable options, and accessibility features for a seamless user experience.
 
 ## :sparkles: Features
 
-Feature 1;\
-:heavy_check_mark: **Add Todo:** Users can easily add new tasks to their todo list using a simple input field./
-:heavy_check_mark: **Delete Todo:** Once a task is completed or no longer needed, users can delete it from the list with a single click or tap./
-:heavy_check_mark: **Mark as Finished:** Users can mark tasks as completed, making it easy to track progress and manage their todo list effectively./
-:heavy_check_mark: **Search Option:** The app includes a search functionality that allows users to quickly find specific tasks by typing keywords or phrases./
+:heavy_check_mark: **Add Todo:** Users can easily add new tasks to their todo list using a simple input field.\
+:heavy_check_mark: **Delete Todo:** Once a task is completed or no longer needed, users can delete it from the list with a single click or tap.\
+:heavy_check_mark: **Mark as Finished:** Users can mark tasks as completed, making it easy to track progress and manage their todo list effectively.\
+:heavy_check_mark: **Search Option:** The app includes a search functionality that allows users to quickly find specific tasks by typing keywords or phrases.\
 :heavy_check_mark: **Responsive Design:** The app is designed to work seamlessly across various devices and screen sizes, ensuring a consistent user experience on desktops, tablets, and smartphones.
 
 ## :rocket: Technologies
@@ -63,7 +62,7 @@ The following tools were used in this project:
 
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind](https://tailwindcss.com/)
+- [Sass](https://sass-lang.com/)
 
 ## :white_check_mark: Requirements
 
